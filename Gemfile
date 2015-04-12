@@ -23,9 +23,23 @@ gem 'jquery-rails'
 gem 'rake','10.4.2'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-
-gem 'bootstrap-sass'
+gem "less-rails" 
+gem "therubyracer"
+gem 'simple_form'
 gem 'autoprefixer-rails'
+gem 'twitter-bootstrap-rails'
+gem 'bootstrap-sass'
+
+group :test, :development do
+  gem 'factory_girl_rails'
+  gem 'ffaker'
+end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'shoulda'
+end
 
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

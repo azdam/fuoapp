@@ -4,7 +4,6 @@ class CreateStudents < ActiveRecord::Migration
       t.string :lastname
       t.string :firstname
       t.string :matric_nos
-      t.string :string
       t.string :department
       t.string :level
       t.string :email
