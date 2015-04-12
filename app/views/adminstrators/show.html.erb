@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @adminstrator.employee_id %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @adminstrator.lastname %>
+</p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @adminstrator.firstname %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @adminstrator.email %>
+</p>
+
+<p>
+  <strong>Auth level:</strong>
+  <%= @adminstrator.auth_level %>
+</p>
+
+<%= link_to 'Edit', edit_adminstrator_path(@adminstrator) %> |
+<%= link_to 'Back', adminstrators_path %>

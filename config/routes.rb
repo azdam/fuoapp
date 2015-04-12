@@ -1,11 +1,11 @@
 FUOApp::Application.routes.draw do
+  resources :adminstrators
+
+  resources :students
+
+  resources :accomodations
+
   resources :hostels
 
-  # get 'student/index'
-
-  # get 'student/show'
-
   root "students#index"
-
-  resources :students, only: [:index]
 end

@@ -1,4 +1,4 @@
-<%= form_for(@hostel) do |f| %>
+<%= simple_form_for(@hostel) do |f| %>
   <% if @hostel.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@hostel.errors.count, "error") %> prohibited this hostel from being saved:</h2>

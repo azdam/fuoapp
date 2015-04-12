@@ -1,2 +1,39 @@
-<h1>Student#show</h1>
-<p>Find me in app/views/student/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @student.lastname %>
+</p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @student.firstname %>
+</p>
+
+<p>
+  <strong>Matric nos:</strong>
+  <%= @student.matric_nos %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @student.department %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @student.level %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @student.email %>
+</p>
+
+<p>
+  <strong>Phonenos:</strong>
+  <%= @student.phonenos %>
+</p>
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>
