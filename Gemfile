@@ -30,6 +30,8 @@ gem 'bootstrap-sass'
 gem 'figaro'
 gem 'web-console'
 gem 'font-awesome-rails'
+gem 'factory_girl_rails'
+gem 'ffaker'
 
 group :production do
   gem 'pg'
