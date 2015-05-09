@@ -20,9 +20,9 @@ test:
   timeout: 5000
   password: <%= ENV['fuoDB_pwd'] %>
 
-production:
-  adapter: mysql2
-  database: fuoapp_production
-  pool: 5
-  timeout: 5000
-  password: <%= ENV['fuoDB_pwd'] %>
+# production:
+#   adapter: mysql2
+#   database: fuoapp_production
+#   pool: 5
+#   timeout: 5000
+#   password: <%= ENV['fuoDB_pwd'] %>
