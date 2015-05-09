@@ -10,36 +10,47 @@
       </ul>
     </div>
   <% end %>
+  <section class="col-md-6" >
+     <div class="field form-group">
+      <%= f.label :lastname %><br>
+      <%= f.text_field :lastname, class:"form-control" %>
+    </div>
+    <div class="field form-group">
+      <%= f.label :firstname  %><br>
+      <%= f.text_field :firstname, class:"form-control"  %>
+    </div>
+     <div class="field form-group">
+      <%= f.label :phonenos %><br>
+      <%= f.text_field :phonenos, class:"form-control"  %>
+    </div>
+    <div class="field form-group">
+      <%= f.label :matric_nos %><br>
+      <%= f.text_field :matric_nos, class:"form-control"  %>
+    </div>
+  </section>
 
-  <div class="field">
-    <%= f.label :lastname %><br>
-    <%= f.text_field :lastname %>
-  </div>
-  <div class="field">
-    <%= f.label :firstname %><br>
-    <%= f.text_field :firstname %>
-  </div>
-  <div class="field">
-    <%= f.label :matric_nos %><br>
-    <%= f.text_field :matric_nos %>
-  </div>
-  <div class="field">
-    <%= f.label :department %><br>
-    <%= f.text_field :department %>
-  </div>
-  <div class="field">
-    <%= f.label :level %><br>
-    <%= f.text_field :level %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :phonenos %><br>
-    <%= f.text_field :phonenos %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <section class="col-md-6" >
+    <div class="field form-group">
+      <%= f.label :department %><br>
+      <%= f.text_field :department, class:"form-control"  %>
+    </div>
+     <div class="field form-group">
+      <%= f.label :level %><br>
+      <%= f.text_field :level, class:"form-control"  %>
+    </div>
+    <div class="field form-group">
+      <%= f.label :email %><br>
+      <%= f.text_field :email , class:"form-control" %>
+    </div>
+
+    <div class="actions">
+      <label> &nbsp;</label>
+      <input type="submit" class="form-control btn btn-primary">
+    </div>
+  </section>
+ 
+  
+ 
+ 
+  
 <% end %>

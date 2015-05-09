@@ -2,9 +2,9 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.8'
+gem 'rails', '4.2.1'
 # Use postgresql as the database for Active Record
-gem 'pg'
+gem 'mysql2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -23,12 +23,13 @@ gem 'jquery-rails'
 gem 'rake','10.4.2'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-gem "less-rails" 
 gem "therubyracer"
 gem 'simple_form'
 gem 'autoprefixer-rails'
-gem 'twitter-bootstrap-rails'
 gem 'bootstrap-sass'
+gem 'figaro'
+gem 'web-console'
+gem 'font-awesome-rails'
 
 group :test, :development do
   gem 'factory_girl_rails'

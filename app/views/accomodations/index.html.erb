@@ -1,12 +1,13 @@
-<h1>Listing accomodations</h1>
+<h3>Accomodations</h3>
 
-<table>
+<%= link_to 'New Accomodation', new_accomodation_path, class: "btn btn-primary create" %>
+
+<table class="table">
   <thead>
     <tr>
       <th>Room nos</th>
       <th>Validity period</th>
       <th>Status</th>
-      <th>User</th>
       <th>Hostel</th>
       <th colspan="3"></th>
     </tr>
@@ -15,19 +16,12 @@
   <tbody>
     <% @accomodations.each do |accomodation| %>
       <tr>
-        <td><%= accomodation.room_nos %></td>
+        <td><a href="<%= accomodation_path(accomodation) %>"><%="RM #{ accomodation.room_nos}" %></a></td>
         <td><%= accomodation.validity_period %></td>
-        <td><%= accomodation.status %></td>
-        <td><%= accomodation.user %></td>
-        <td><%= accomodation.hostel %></td>
-        <td><%= link_to 'Show', accomodation %></td>
-        <td><%= link_to 'Edit', edit_accomodation_path(accomodation) %></td>
-        <td><%= link_to 'Destroy', accomodation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= accomodation.has_occupant ? "Occupied": "Vacant" %></td>
+        <td><%= accomodation.hostel.name %></td>
+        <td><a href="<%= edit_accomodation_path(accomodation) %>" title="update"><i class="fa fa-edit"></i></a></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Accomodation', new_accomodation_path %>

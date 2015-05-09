@@ -1,4 +1,9 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <div class="alert alert-info alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong><%= notice %></strong>
+  </div>
+<% end %>
 
 <p>
   <strong>Lastname:</strong>
@@ -35,5 +40,6 @@
   <%= @student.phonenos %>
 </p>
 
-<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= render partial: "shared/accomodation_info", object: @student %>
+
 <%= link_to 'Back', students_path %>

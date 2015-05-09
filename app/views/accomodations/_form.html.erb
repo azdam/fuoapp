@@ -1,37 +1,39 @@
-<%= simple_form_for(@accomodation) do |f| %>
-  <% if @accomodation.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@accomodation.errors.count, "error") %> prohibited this accomodation from being saved:</h2>
+<section class="col-md-9 centralize">
+  <%= simple_form_for(@accomodation) do |f| %>
+    <% if @accomodation.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@accomodation.errors.count, "error") %> prohibited this accomodation from being saved:</h2>
 
-      <ul>
-      <% @accomodation.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @accomodation.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="field form-section">
+      <label for="accomodation_student_id">Student</label>
+      <%= collection_select(:accomodation, :student_id, @students, :id, :full_name, {:prompt => false}, class:"form-control") %>
+    </div>
+
+    <div class="field form-section">
+      <%= f.label :hostel %>
+      <%= collection_select(:accomodation, :hostel_id, @hostels, :id, :name, {:prompt => false}, class:"form-control") %>
+    </div>
+
+    <section class="form-section inner">
+       <div class="field form-section col-md-6">
+        <%= f.label :room_nos %>
+        <%= f.text_field :room_nos, class:"form-control" %>
+      </div>
+      <div class="field form-section col-md-6">
+        <%= f.label :validity_period %>
+        <%= select(:accomodation,  :validity_period, ["2014/2015 Session" ], { include_blank: true }, class:"form-control") %>
+      </div>
+    </section>
+
+    <div class="actions">
+      <input type="submit" class="btn btn-danger">
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :room_nos %><br>
-    <%= f.text_field :room_nos %>
-  </div>
-  <div class="field">
-    <%= f.label :validity_period %><br>
-    <%= f.text_field :validity_period %>
-  </div>
-  <div class="field">
-    <%= f.label :has_occupant %><br>
-    <%= f.check_box :has_occupant %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :hostel %><br>
-    <%= f.text_field :hostel %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</section>

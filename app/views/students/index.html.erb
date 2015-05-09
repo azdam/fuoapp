@@ -1,11 +1,11 @@
-<h1>Listing students</h1>
-
-<table>
+<h3>Students</h3>
+<%= link_to 'New Student', new_student_path, class: "btn btn-primary create" %>
+<table class="table table-condensed">
   <thead>
     <tr>
-      <th>Lastname</th>
-      <th>Firstname</th>
       <th>Matric nos</th>
+      <th>Lastname</th>
+      <th>Firstname</th>      
       <th>Department</th>
       <th>Level</th>
       <th>Email</th>
@@ -17,21 +17,16 @@
   <tbody>
     <% @students.each do |student| %>
       <tr>
+        <td><a href="<%= student_path(student) %>"><%= student.matric_nos %></a></td>
         <td><%= student.lastname %></td>
         <td><%= student.firstname %></td>
-        <td><%= student.matric_nos %></td>
         <td><%= student.department %></td>
         <td><%= student.level %></td>
         <td><%= student.email %></td>
         <td><%= student.phonenos %></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><a href="<%= edit_student_path(student) %>" title="update"><i class="fa fa-edit"></i></a></td>
+        <td><%= link_to content_tag(:i, nil,  class: "fa fa-trash", title:"remove student"), student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Student', new_student_path %>

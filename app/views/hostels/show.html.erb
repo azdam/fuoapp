@@ -1,19 +1,25 @@
-<p id="notice"><%= notice %></p>
+<section class="centralize col-md-9">
+  <% if notice %>
+    <div class="alert alert-info alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong><%= notice %></strong>
+    </div>
+  <% end %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @hostel.name %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @hostel.name %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @hostel.description %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @hostel.description %>
+  </p>
 
-<p>
-  <strong>Room count:</strong>
-  <%= @hostel.room_count %>
-</p>
+  <p>
+    <strong>Room count:</strong>
+    <%= @hostel.room_count %>
+  </p>
 
-<%= link_to 'Edit', edit_hostel_path(@hostel) %> |
-<%= link_to 'Back', hostels_path %>
+  <%= link_to 'Edit', edit_hostel_path(@hostel), class:"btn btn-default"%> 
+</section>

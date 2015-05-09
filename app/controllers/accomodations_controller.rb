@@ -15,16 +15,22 @@ class AccomodationsController < ApplicationController
   # GET /accomodations/new
   def new
     @accomodation = Accomodation.new
+    @students = Student.all
+    @hostels = Hostel.all
   end
 
   # GET /accomodations/1/edit
   def edit
+        @students = Student.all
+        @hostels = Hostel.all
   end
 
   # POST /accomodations
   # POST /accomodations.json
   def create
     @accomodation = Accomodation.new(accomodation_params)
+    @accomodation.has_occupant = true
+    @accomodation.room_nos = @accomodation.room_nos.rjust(3,'0')
 
     respond_to do |format|
       if @accomodation.save
@@ -69,6 +75,6 @@ class AccomodationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def accomodation_params
-      params.require(:accomodation).permit(:room_nos, :validity_period, :status, :user_id, :hostel)
+      params.require(:accomodation).permit(:room_nos, :validity_period, :status, :student_id, :hostel_id)
     end
 end

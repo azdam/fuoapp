@@ -1,8 +1,13 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <div class="alert alert-info alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong><%= notice %></strong>
+  </div>
+<% end %>
 
 <p>
   <strong>Room nos:</strong>
-  <%= @accomodation.room_nos %>
+  <%= "RM #{@accomodation.room_nos}" %>
 </p>
 
 <p>
@@ -12,17 +17,17 @@
 
 <p>
   <strong>Status:</strong>
-  <%= @accomodation.status %>
+  <%= @accomodation.has_occupant ? "Occupied" : "Vacant" %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @accomodation.user %>
+  <%= "#{@accomodation.student.full_name} ( #{@accomodation.student.matric_nos} )" %>
 </p>
 
 <p>
   <strong>Hostel:</strong>
-  <%= @accomodation.hostel %>
+  <%= @accomodation.hostel.name %>
 </p>
 
 <%= link_to 'Edit', edit_accomodation_path(@accomodation) %> |

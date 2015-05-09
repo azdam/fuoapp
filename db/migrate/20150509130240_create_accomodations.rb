@@ -4,7 +4,7 @@ class CreateAccomodations < ActiveRecord::Migration
       t.string :room_nos
       t.string :validity_period
       t.boolean :has_occupant
-      t.references :user, index: true
+      t.references :student, index: true
       t.references :hostel, index: true
 
       t.timestamps

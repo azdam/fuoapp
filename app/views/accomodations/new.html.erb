@@ -1,5 +1,41 @@
-<h1>New accomodation</h1>
+<h3>New accomodation</h3>
 
-<%= render 'form' %>
+<section class="col-md-9 centralize">
+  <%= simple_form_for(@accomodation) do |f| %>
+    <% if @accomodation.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@accomodation.errors.count, "error") %> prohibited this accomodation from being saved:</h2>
 
-<%= link_to 'Back', accomodations_path %>
+        <ul>
+        <% @accomodation.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="field form-section">
+      <label for="accomodation_student_id">Student</label>
+      <%= collection_select(:accomodation, :student_id, @students, :id, :full_name, {:prompt => false}, class:"form-control") %>
+    </div>
+
+    <div class="field form-section">
+      <%= f.label :hostel %>
+      <%= collection_select(:accomodation, :hostel_id, @hostels, :id, :name, {:prompt => false}, class:"form-control") %>
+    </div>
+
+    <section class="form-section inner">
+       <div class="field form-section col-md-6">
+        <%= f.label :room_nos %>
+        <%= f.text_field :room_nos, class:"form-control" %>
+      </div>
+      <div class="field form-section col-md-6">
+        <%= f.label :validity_period %>
+        <%= select(:accomodation,  :validity_period, ["2014/2015 Session" ], { include_blank: true }, class:"form-control") %>
+      </div>
+    </section>
+
+    <div class="actions">
+      <input type="submit" class="btn btn-danger">
+    </div>
+  <% end %>
+</section>
