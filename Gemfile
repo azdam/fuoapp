@@ -32,6 +32,7 @@ gem 'web-console'
 gem 'font-awesome-rails'
 gem 'factory_girl_rails'
 gem 'ffaker'
+gem 'active_model_serializers', '~> 0.8.3'
 
 group :production do
   gem 'pg'
@@ -40,7 +41,6 @@ group :production do
 end
 
 group :test, :development do
-  gem 'factory_girl_rails'
   gem 'ffaker'
 end
 

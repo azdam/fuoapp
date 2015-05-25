@@ -5,11 +5,20 @@ class AccomodationsController < ApplicationController
   # GET /accomodations.json
   def index
     @accomodations = Accomodation.all
+    respond_to do |format|
+      format.html
+      format.json { render json: @accomodations, status: 200 }
+    end
   end
 
   # GET /accomodations/1
   # GET /accomodations/1.json
   def show
+    @accomodation.hostel_name = Hostel.find(@accomodation.hostel_id).name
+    respond_to do |format|
+      format.html
+      format.json { @accomodation }
+    end
   end
 
   # GET /accomodations/new
@@ -75,6 +84,6 @@ class AccomodationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def accomodation_params
-      params.require(:accomodation).permit(:room_nos, :validity_period, :status, :student_id, :hostel_id)
+      params.require(:accomodation).permit(:room_nos, :validity_period, :status, :student_id, :hostel_id )
     end
 end
