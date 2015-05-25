@@ -1,18 +1,22 @@
 <fieldset>
   <legend>Accomodation Details</legend>
-  
-  <div class="field">
+  <% if @student.accomodation %>
+    <div class="field">
     <label>Hostel</label>
     <input type="text" value="<%= @student.accomodation.hostel.name %>" disabled/>
-  </div>
+    </div>
 
-  <div class="field">
-    <label>Room nos</label>
-    <input type="text" value="<%= @student.accomodation.room_nos %>" disabled/>
-  </div>
+    <div class="field">
+      <label>Room nos</label>
+      <input type="text" value="<%= @student.accomodation.room_nos %>" disabled/>
+    </div>
 
-  <div class="field">
-    <label>Validity Period</label>
-    <input type="text" value="<%= @student.accomodation.validity_period %>" disabled/>
-  </div>
+    <div class="field">
+      <label>Validity Period</label>
+      <input type="text" value="<%= @student.accomodation.validity_period %>" disabled/>
+    </div>
+  <% else %>
+    <div><h4>This student doesn't have an accomodation yet.</h4></div>
+  <% end %>
+  
 </fieldset>
