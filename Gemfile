@@ -34,6 +34,9 @@ gem 'factory_girl_rails'
 gem 'ffaker'
 gem 'active_model_serializers', '~> 0.8.3'
 
+#to allow for cross-origin requests from mobile
+gem 'rack-cors', require: 'rack/cors'
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'
