@@ -1,4 +1,5 @@
 FUOApp::Application.routes.draw do
+  resources :administrators
   resources :adminstrators
 
   resources :students
@@ -7,5 +8,10 @@ FUOApp::Application.routes.draw do
 
   resources :hostels
 
+  resources :sessions, only: [:create, :new, :destroy]
+
+  match '/signin', to: 'sessions#new', via: :get
+  match '/signout', to: 'sessions#destroy', via: :delete
+  
   root "students#index"
 end

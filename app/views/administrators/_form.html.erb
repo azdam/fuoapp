@@ -1,0 +1,22 @@
+<%= simple_form_for(@administrator) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="field form-section">
+    <%= f.label :email, 'Email' %><br>
+    <%= f.text_field :email, class:"form-control", pattern: "email", required: "true"%>
+  </div>
+
+  <div class="field form-section">
+    <%= f.label :password, 'Password' %><br>
+    <%= f.password_field :password, size: 40, class:"form-control"%>
+  </div>
+
+  <div class="field form-section">
+    <%= f.label :password_confirmation, 'Confirm password' %><br>
+    <%= f.password_field :password_confirmation, size: 40, class:"form-control" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

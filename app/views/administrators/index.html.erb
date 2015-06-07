@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admins</h1>
+
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Email</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @administrators.each do |administrator| %>
+      <tr>
+        <td><%= link_to administrator.email, administrator %></td>
+        <td>
+          <%= link_to edit_administrator_path(administrator) do  %>
+            <i class="fa fa-edit"></i>
+          <% end %>
+
+        </td>
+        <td><%= link_to 'Destroy', administrator, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Administrator', new_administrator_path %>

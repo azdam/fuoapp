@@ -34,6 +34,9 @@ gem 'factory_girl_rails'
 gem 'ffaker'
 gem 'active_model_serializers', '~> 0.8.3'
 
+# Use ActiveModel has_secure_password
+gem 'bcrypt', '~> 3.1.7'
+
 #to allow for cross-origin requests from mobile
 gem 'rack-cors', require: 'rack/cors'
 
@@ -41,10 +44,6 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
   gem 'puma'
-end
-
-group :test, :development do
-  gem 'ffaker'
 end
 
 group :test do

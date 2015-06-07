@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150509130240) do
+ActiveRecord::Schema.define(version: 20150607221148) do
 
-  create_table "accomodations", force: true do |t|
-    t.string   "room_nos"
-    t.string   "validity_period"
-    t.boolean  "has_occupant"
-    t.integer  "student_id"
-    t.integer  "hostel_id"
+  create_table "accomodations", force: :cascade do |t|
+    t.string   "room_nos",        limit: 255
+    t.string   "validity_period", limit: 255
+    t.boolean  "has_occupant",    limit: 1
+    t.integer  "student_id",      limit: 4
+    t.integer  "hostel_id",       limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -26,32 +26,40 @@ ActiveRecord::Schema.define(version: 20150509130240) do
   add_index "accomodations", ["hostel_id"], name: "index_accomodations_on_hostel_id", using: :btree
   add_index "accomodations", ["student_id"], name: "index_accomodations_on_student_id", using: :btree
 
-  create_table "adminstrators", force: true do |t|
-    t.string   "employee_id"
-    t.string   "lastname"
-    t.string   "firstname"
-    t.string   "email"
-    t.integer  "auth_level"
+  create_table "administrators", force: :cascade do |t|
+    t.string   "email",           limit: 255
+    t.string   "password",        limit: 255
+    t.string   "password_digest", limit: 255
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  create_table "adminstrators", force: :cascade do |t|
+    t.string   "employee_id", limit: 255
+    t.string   "lastname",    limit: 255
+    t.string   "firstname",   limit: 255
+    t.string   "email",       limit: 255
+    t.integer  "auth_level",  limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "hostels", force: true do |t|
-    t.string   "name"
-    t.string   "description"
-    t.integer  "room_count"
+  create_table "hostels", force: :cascade do |t|
+    t.string   "name",        limit: 255
+    t.string   "description", limit: 255
+    t.integer  "room_count",  limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "students", force: true do |t|
-    t.string   "lastname"
-    t.string   "firstname"
-    t.string   "matric_nos"
-    t.string   "department"
-    t.string   "level"
-    t.string   "email"
-    t.string   "phonenos"
+  create_table "students", force: :cascade do |t|
+    t.string   "lastname",   limit: 255
+    t.string   "firstname",  limit: 255
+    t.string   "matric_nos", limit: 255
+    t.string   "department", limit: 255
+    t.string   "level",      limit: 255
+    t.string   "email",      limit: 255
+    t.string   "phonenos",   limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
