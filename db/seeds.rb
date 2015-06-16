@@ -30,4 +30,4 @@ students.each do |student|
 end
 
 #create Administrator
-Administrator.create(email: "azeezat@fuo.edu.ng", password: "password123")
+Administrator.create(email: "azeezat@fuo.edu.ng", password: "test1234")
