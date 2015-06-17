@@ -17,12 +17,13 @@ students = Student.all
 hostel_ids = Hostel.all.map {|hostel| hostel.id }
 #we're assuming that each student has an acomodation
 
+
 students.each do |student|
   accomodation = Accomodation.create!(
     validity_period: "One Session (2014/2015)",
     has_occupant: 1,
     student_id: student.id,
-    hostel_id: rand( 1..hostel_ids.length )
+    hostel_id: rand( hostel_ids[0]..hostel_ids[hostel_ids.length-1])
   )
 
   accomodation.update_attribute("room_nos", rand(1..accomodation.hostel.room_count).to_s.rjust(3, '0'))
